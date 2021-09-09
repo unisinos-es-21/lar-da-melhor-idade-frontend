@@ -1,12 +1,13 @@
-import { Color, Size, Title } from "@lar_melhor_idade/design-system";
+import { Router } from '@reach/router';
+import { Login } from './containers/Login';
 
 function App() {
   return (
-    <div>
-      <Title color={Color.BLACK} size={Size.MEDIUM} type="h2">
-        Hello world
-      </Title>
-    </div>
+    <main>
+      <Router>
+        <Login path="/"></Login>
+      </Router>
+    </main>
   );
 }
 
