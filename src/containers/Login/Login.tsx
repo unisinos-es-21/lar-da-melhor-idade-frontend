@@ -28,15 +28,16 @@ export function Login(props: LoginProps) {
       password: '',
     },
     onSubmit: async ({ username, password }) => {
-      try {
-        const { data } = await login(username, password);
+      await login(username, password)
+        .then(({ data }) => {
+          localStorage.setItem('token', data.token);
+          navigate('/home');
+        })
+        .catch((err) => {
+          const { response } = err;
 
-        localStorage.setItem('token', data.token);
-
-        navigate('/home');
-      } catch (e) {
-        console.error(e);
-      }
+          alert(response.data.message ?? 'Erro inesperado');
+        });
     },
   });
 
