@@ -28,7 +28,7 @@ export function Login(props: LoginProps) {
       password: '',
     },
     onSubmit: async ({ username, password }) => {
-      await login(username, password)
+      await login({ username, password })
         .then(({ data }) => {
           localStorage.setItem('token', data.token);
           navigate('/home');

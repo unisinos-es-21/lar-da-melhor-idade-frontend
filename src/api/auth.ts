@@ -1,5 +1,11 @@
+import { AxiosResponse } from 'axios';
 import { client } from './client';
 
-export function login(username: string, password: string) {
-  return client.post('auth/authenticate', { username, password });
+import { AuthResponse, AuthRequest } from './interface/auth';
+
+export function login(authRequest: AuthRequest) {
+  return client.post<AuthRequest, AxiosResponse<AuthResponse>>(
+    'auth/authenticate',
+    authRequest
+  );
 }
