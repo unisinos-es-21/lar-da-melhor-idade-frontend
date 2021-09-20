@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react';
 
-import { Institutionalized } from './';
+import { InstitutionalizedHome } from '.';
 
-describe('Institutionalized - Container para a página de institucionalizado', () => {
+describe('InstitutionalizedHome - Container para a página de institucionalizado', () => {
   test('Deve renderizar os elementos', async () => {
-    render(<Institutionalized />);
+    render(<InstitutionalizedHome />);
 
     const title = await screen.findByText(
       'ILPI Melhor Idade > Institucionalizado'

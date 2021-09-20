@@ -10,7 +10,7 @@ function App() {
       <Router>
         <Login path="/" />
         <Home path="/home" />
-        <Institutionalized path="/institutionalized" />
+        <Institutionalized path="/institutionalized/*" />
       </Router>
     </main>
   );
