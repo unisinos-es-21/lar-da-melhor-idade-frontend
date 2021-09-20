@@ -2,13 +2,15 @@ import { Router } from '@reach/router';
 
 import { Login } from './containers/Login';
 import { Home } from './containers/Home';
+import { Institutionalized } from './containers/Institutionalized';
 
 function App() {
   return (
     <main>
       <Router>
-        <Login path="/"></Login>
-        <Home path="/home"></Home>
+        <Login path="/" />
+        <Home path="/home" />
+        <Institutionalized path="/institutionalized" />
       </Router>
     </main>
   );
