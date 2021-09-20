@@ -132,7 +132,7 @@ export function InstitutionalizedRegister({
                   }
                 />
               </div>
-              <div className="flex items-center w-full space-x-4 md:mt-6">
+              <div className="flex flex-col w-full space-y-4 md:space-y-0 md:space-x-4 md:mt-6 md:flex-row md:items-center ">
                 <Text>Sexo:</Text>
                 <Input
                   type="radio"
@@ -156,7 +156,7 @@ export function InstitutionalizedRegister({
                   onChange={onChangeGender}
                 />
               </div>
-              <div className="flex w-full space-x-4 md:mt-8">
+              <div className="flex flex-col w-full mt-4 space-y-4 md:space-y-0 md:space-x-4 md:flex-row md:mt-8">
                 <Button
                   type="submit"
                   color={Color.GREEN}
