@@ -13,7 +13,6 @@ import {
   Color,
   Text,
 } from '@lar_melhor_idade/design-system';
-import { formatCPF } from '@brazilian-utils/brazilian-utils';
 
 import { InstitutionalizedRequest } from '../../../api/interface/institutionalized';
 import { register } from '../../../api/institutionalized';
@@ -95,7 +94,7 @@ export function InstitutionalizedRegister({
                 <Input
                   placeholder="CPF"
                   name="cpf"
-                  value={formatCPF(formik.values.cpf)}
+                  value={formik.values.cpf}
                   maxLength={14}
                   onChange={(evt) =>
                     formik.setFieldValue(
