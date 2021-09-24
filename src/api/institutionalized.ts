@@ -2,6 +2,7 @@ import { client } from './client';
 
 import {
   InstitutionalizedRequest,
+  InstitutionalizedResponse,
   InstitutionalizedListRequest,
   InstitutionalizedListResponse,
 } from './interface/institutionalized';
@@ -11,6 +12,10 @@ export function register(institutionalizedRequest: InstitutionalizedRequest) {
     'institutionalized',
     institutionalizedRequest
   );
+}
+
+export function getRegister(id: string) {
+  return client.get<InstitutionalizedResponse>(`institutionalized/${id}`);
 }
 
 export function getList(

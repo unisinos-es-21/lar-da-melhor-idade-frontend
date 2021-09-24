@@ -20,7 +20,29 @@ const columns = [
   { column: 'phone', description: 'Telefone' },
   { column: 'birthDay', description: 'Data de Nascimento' },
   { column: 'gender', description: 'Sexo' },
+  { column: 'actions', description: 'Ações' },
 ];
+
+function TableActions({ id }: { id: number }) {
+  return (
+    <div>
+      <Button
+        color={Color.BLACK}
+        onClick={async () =>
+          await navigate(`/institutionalized/medical-record/${id}`)
+        }
+      >
+        Prontuário
+      </Button>
+    </div>
+  );
+}
+
+enum Gender {
+  MASCULINE = 'Masculino',
+  FEMININE = 'Feminino',
+  OTHER = 'Outro',
+}
 
 export function InstitutionalizedHome({ ...props }: InstitutionalizedProps) {
   const [listProps, setListProps] = useState<InstitutionalizedListResponse>({
@@ -47,11 +69,22 @@ export function InstitutionalizedHome({ ...props }: InstitutionalizedProps) {
   );
 
   const dataBody = useMemo(() => {
-    return listProps?.content.map(({ name, cpf, phone, birthDay, gender }) => {
-      const values = [name, cpf, phone, birthDay, gender];
+    return listProps?.content.map(
+      ({ name, cpf, phone, birthDay, gender, id }) => {
+        const parseGender = gender as keyof typeof Gender;
+        const formatGender = Gender[parseGender];
+        const values = [
+          name,
+          cpf,
+          phone,
+          birthDay,
+          formatGender,
+          <TableActions id={id} />,
+        ];
 
-      return { values };
-    });
+        return { values };
+      }
+    );
   }, [listProps]);
 
   const handleFilter = useCallback(async (value) => {

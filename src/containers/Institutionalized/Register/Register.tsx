@@ -164,7 +164,12 @@ export function InstitutionalizedRegister({
                 >
                   Cadastrar
                 </Button>
-                <Button type="button" color={Color.BLACK} icon="ban">
+                <Button
+                  type="button"
+                  color={Color.BLACK}
+                  icon="ban"
+                  onClick={async () => await navigate(`/institutionalized`)}
+                >
                   Cancelar
                 </Button>
               </div>
