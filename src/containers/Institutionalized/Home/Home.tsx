@@ -66,8 +66,6 @@ export function InstitutionalizedHome({ ...props }: InstitutionalizedProps) {
     setListProps(data);
   }, []);
 
-  console.log(listProps);
-
   return (
     <section
       className="flex flex-col justify-start items-center w-full min-h-screen bg-white space-y-8 md:p-0"

@@ -8,7 +8,6 @@ export interface InstitutionalizedRequest {
 
 export interface InstitutionalizedListRequest {
   name?: string;
-  cpf?: string;
   page?: number;
 }
 
@@ -18,7 +17,7 @@ export interface InstitutionalizedListResponse {
     cpf: string;
     phone: string;
     birthDay: string;
-    gender: number;
+    gender: string;
   }[];
   first: boolean;
   last: boolean;

@@ -14,12 +14,11 @@ export function register(institutionalizedRequest: InstitutionalizedRequest) {
 }
 
 export function getList(
-  param: InstitutionalizedListRequest = { page: 0, cpf: '', name: '' }
+  param: InstitutionalizedListRequest = { page: 0, name: '' }
 ) {
   const params = new URLSearchParams();
 
   params.append('page', String(param.page ?? 0));
-  params.append('cpf', param.cpf ?? '');
   params.append('name', param.name ?? '');
 
   const url = `institutionalized?${params.toString()}`;
