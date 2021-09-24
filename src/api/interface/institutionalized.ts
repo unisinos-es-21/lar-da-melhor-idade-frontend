@@ -9,7 +9,7 @@ export interface InstitutionalizedRequest {
 export interface InstitutionalizedListRequest {
   name?: string;
   cpf?: string;
-  pageNumber?: number;
+  page?: number;
 }
 
 export interface InstitutionalizedListResponse {

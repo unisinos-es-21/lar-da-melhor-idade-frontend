@@ -23,7 +23,13 @@ const columns = [
 ];
 
 export function InstitutionalizedHome({ ...props }: InstitutionalizedProps) {
-  const [listProps, setListProps] = useState<InstitutionalizedListResponse>();
+  const [listProps, setListProps] = useState<InstitutionalizedListResponse>({
+    content: [],
+    first: true,
+    last: true,
+    number: 0,
+    totalPages: 0,
+  });
 
   useEffect(() => {
     async function fetchList() {
@@ -55,10 +61,12 @@ export function InstitutionalizedHome({ ...props }: InstitutionalizedProps) {
   }, []);
 
   const handleNextOrPrevPage = useCallback(async (value) => {
-    const { data } = await getList({ pageNumber: value });
+    const { data } = await getList({ page: value });
 
     setListProps(data);
   }, []);
+
+  console.log(listProps);
 
   return (
     <section
@@ -84,15 +92,15 @@ export function InstitutionalizedHome({ ...props }: InstitutionalizedProps) {
           title="Institucionalizados"
           inputName="search"
           inputPlaceholder="Pesquisar"
-          data={dataBody ?? []}
+          data={dataBody}
           columns={columnsHeader}
-          totalPages={listProps?.totalPages ?? 0}
-          page={listProps?.number ?? 0}
-          isFirst={listProps?.first ?? true}
-          isLast={listProps?.last ?? true}
+          totalPages={listProps.totalPages}
+          page={listProps.number}
+          isFirst={listProps.first}
+          isLast={listProps.last}
           filter={handleFilter}
-          nextPage={() => handleNextOrPrevPage(listProps?.number ?? 0 + 1)}
-          previousPage={() => handleNextOrPrevPage(listProps?.number ?? 0 - 1)}
+          nextPage={() => handleNextOrPrevPage(listProps.number + 1)}
+          previousPage={() => handleNextOrPrevPage(listProps.number - 1)}
         />
       </div>
     </section>
