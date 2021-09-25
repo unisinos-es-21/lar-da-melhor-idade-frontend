@@ -13,10 +13,7 @@ export interface HomeProps extends RouteComponentProps {}
 
 export function Home(props: HomeProps) {
   return (
-    <section
-      className="flex flex-col justify-start items-center w-full min-h-screen bg-white space-y-8 md:p-0"
-      {...props}
-    >
+    <section className="flex flex-col justify-start items-center w-full min-h-screen bg-white space-y-8 md:p-0">
       <Header className="px-4 md:px-0">
         <Title type="h1">ILPI Melhor Idade</Title>
       </Header>

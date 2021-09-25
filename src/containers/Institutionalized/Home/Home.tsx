@@ -20,7 +20,29 @@ const columns = [
   { column: 'phone', description: 'Telefone' },
   { column: 'birthDay', description: 'Data de Nascimento' },
   { column: 'gender', description: 'Sexo' },
+  { column: 'actions', description: 'Ações' },
 ];
+
+function TableActions({ id }: { id: number }) {
+  return (
+    <div>
+      <Button
+        color={Color.BLACK}
+        onClick={async () =>
+          await navigate(`/institutionalized/medical-record/${id}/list`)
+        }
+      >
+        Prontuário
+      </Button>
+    </div>
+  );
+}
+
+enum Gender {
+  MASCULINE = 'Masculino',
+  FEMININE = 'Feminino',
+  OTHER = 'Outro',
+}
 
 export function InstitutionalizedHome({ ...props }: InstitutionalizedProps) {
   const [listProps, setListProps] = useState<InstitutionalizedListResponse>({
@@ -47,11 +69,22 @@ export function InstitutionalizedHome({ ...props }: InstitutionalizedProps) {
   );
 
   const dataBody = useMemo(() => {
-    return listProps?.content.map(({ name, cpf, phone, birthDay, gender }) => {
-      const values = [name, cpf, phone, birthDay, gender];
+    return listProps?.content.map(
+      ({ name, cpf, phone, birthDay, gender, id }) => {
+        const parseGender = gender as keyof typeof Gender;
+        const formatGender = Gender[parseGender];
+        const values = [
+          name,
+          cpf,
+          phone,
+          birthDay,
+          formatGender,
+          <TableActions id={id} />,
+        ];
 
-      return { values };
-    });
+        return { values };
+      }
+    );
   }, [listProps]);
 
   const handleFilter = useCallback(async (value) => {
@@ -67,10 +100,7 @@ export function InstitutionalizedHome({ ...props }: InstitutionalizedProps) {
   }, []);
 
   return (
-    <section
-      className="flex flex-col justify-start items-center w-full min-h-screen bg-white space-y-8 md:p-0"
-      {...props}
-    >
+    <section className="flex flex-col justify-start items-center w-full min-h-screen bg-white space-y-8 md:p-0">
       <Header className="px-4 md:px-0">
         <Title type="h1">ILPI Melhor Idade {'>'} Institucionalizado</Title>
       </Header>

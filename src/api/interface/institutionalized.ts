@@ -6,6 +6,14 @@ export interface InstitutionalizedRequest {
   gender: number;
 }
 
+export interface InstitutionalizedResponse extends InstitutionalizedRequest {
+  id: number;
+  createdBy: string;
+  createdDate: string;
+  lastModifiedBy: string;
+  lastModifiedDate: string;
+}
+
 export interface InstitutionalizedListRequest {
   name?: string;
   page?: number;
@@ -13,6 +21,7 @@ export interface InstitutionalizedListRequest {
 
 export interface InstitutionalizedListResponse {
   content: {
+    id: number;
     name: string;
     cpf: string;
     phone: string;
