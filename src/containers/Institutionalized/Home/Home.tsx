@@ -29,7 +29,7 @@ function TableActions({ id }: { id: number }) {
       <Button
         color={Color.BLACK}
         onClick={async () =>
-          await navigate(`/institutionalized/medical-record/${id}`)
+          await navigate(`/institutionalized/medical-record/${id}/list`)
         }
       >
         Prontuário
@@ -100,10 +100,7 @@ export function InstitutionalizedHome({ ...props }: InstitutionalizedProps) {
   }, []);
 
   return (
-    <section
-      className="flex flex-col justify-start items-center w-full min-h-screen bg-white space-y-8 md:p-0"
-      {...props}
-    >
+    <section className="flex flex-col justify-start items-center w-full min-h-screen bg-white space-y-8 md:p-0">
       <Header className="px-4 md:px-0">
         <Title type="h1">ILPI Melhor Idade {'>'} Institucionalizado</Title>
       </Header>
