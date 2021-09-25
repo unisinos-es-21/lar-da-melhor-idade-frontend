@@ -49,7 +49,7 @@ function TableActions({
       <Button
         color={Color.RED}
         onClick={async () => {
-          await deleteMedicalRecord(String(id));
+          await deleteMedicalRecord(String(idMedicalRecord));
 
           handleRemove();
         }}
