@@ -36,7 +36,7 @@ npm start
 npm run test
 ```
 
-## Contrução
+## Construção
 
 ```bash
 npm run build
