@@ -64,7 +64,20 @@ export function InstitutionalizedRegister({
     <section className="flex flex-col justify-start items-center w-full min-h-screen bg-white space-y-8 md:p-0">
       <Header className="px-4 md:px-0">
         <Title type="h1">
-          ILPI Melhor Idade {'>'} Institucionalizado {'>'} Cadastrar
+          <span
+            className="cursor-pointer"
+            onClick={async () => await navigate(`/home`)}
+          >
+            ILPI Melhor Idade
+          </span>
+          {' > '}
+          <span
+            className="cursor-pointer"
+            onClick={async () => await navigate(`/institutionalized`)}
+          >
+            Institucionalizado
+          </span>
+          {' > '} Cadastrar
         </Title>
       </Header>
       <div className="container grid grid-cols-1 px-4 md:px-0">
