@@ -37,8 +37,6 @@ export function InstitutionalizedMedicalRecordView({
     fetchList();
   }, [idMedicalRecord]);
 
-  console.log(medicalRecord);
-
   return (
     <section className="flex flex-col justify-start items-center w-full min-h-screen bg-white space-y-8 md:p-0">
       <Header className="px-4 md:px-0">
