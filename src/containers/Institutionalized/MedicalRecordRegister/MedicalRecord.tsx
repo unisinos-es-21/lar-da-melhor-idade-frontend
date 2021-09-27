@@ -62,7 +62,7 @@ export function InstitutionalizedMedicalRecordRegister({
         institutionalized: institutionalized,
       })
         .then(async () => {
-          await navigate('/institutionalized');
+          await navigate(`/institutionalized/medical-record/${id}/list`);
         })
         .catch((err) => {
           const { response } = err;
