@@ -156,6 +156,19 @@ export function InstitutionalizedMedicalRecordList({
         </Title>
       </Header>
       <div className="container grid grid-cols-1 px-4 space-y-4 md:px-0">
+        <div>
+          <Button
+            className="w-auto"
+            type="button"
+            color={Color.BLACK}
+            icon="plus"
+            onClick={async () =>
+              await navigate(`/institutionalized/medical-record/${id}`)
+            }
+          >
+            Cadastrar
+          </Button>
+        </div>
         <Table
           title="Prontuário"
           inputName="search"
