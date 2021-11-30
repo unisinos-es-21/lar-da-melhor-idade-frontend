@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const client = axios.create({
-  baseURL: 'https://unisinos-test-21.herokuapp.com',
+  baseURL: 'https://lar-da-melhor-idade-backend.herokuapp.com',
 });
 
 client.interceptors.request.use(
