@@ -6,7 +6,7 @@ import { InstitutionalizedMedicalRecord } from './MedicalRecord';
 
 export interface InstitutionalizedProps extends RouteComponentProps {}
 
-export function Institutionalized(props: InstitutionalizedProps) {
+export function Institutionalized(_props: InstitutionalizedProps) {
   return (
     <Router>
       <InstitutionalizedHome path="/" />

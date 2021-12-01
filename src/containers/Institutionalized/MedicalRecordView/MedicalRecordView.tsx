@@ -12,8 +12,8 @@ import {
   Size,
 } from '@lar_melhor_idade/design-system';
 
-import { getMedicalRecord } from '../../../api/medical-record';
-import { MedicalRecordResponse } from '../../../api/interface/medical-record';
+import { getMedicalRecord } from 'api/medical-record';
+import { MedicalRecordResponse } from 'api/interface/medical-record';
 
 export interface MedicalRecordListProps extends RouteComponentProps {
   id?: string;

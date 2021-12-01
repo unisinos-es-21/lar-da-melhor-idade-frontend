@@ -9,11 +9,8 @@ import {
   Table,
 } from '@lar_melhor_idade/design-system';
 
-import {
-  getMedicalRecordList,
-  deleteMedicalRecord,
-} from '../../../api/medical-record';
-import { MedicalRecordListResponse } from '../../../api/interface/medical-record';
+import { getMedicalRecordList, deleteMedicalRecord } from 'api/medical-record';
+import { MedicalRecordListResponse } from 'api/interface/medical-record';
 
 export interface MedicalRecordListProps extends RouteComponentProps {
   id?: string;

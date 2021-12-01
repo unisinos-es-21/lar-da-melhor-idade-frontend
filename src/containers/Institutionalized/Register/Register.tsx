@@ -14,8 +14,8 @@ import {
   Text,
 } from '@lar_melhor_idade/design-system';
 
-import { InstitutionalizedRequest } from '../../../api/interface/institutionalized';
-import { register } from '../../../api/institutionalized';
+import { InstitutionalizedRequest } from 'api/interface/institutionalized';
+import { register } from 'api/institutionalized';
 
 export interface InstitutionalizedRegisterProps extends RouteComponentProps {}
 

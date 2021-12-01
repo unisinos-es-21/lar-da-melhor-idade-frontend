@@ -8,7 +8,7 @@ export interface InstitutionalizedMedicalRecordProps
   extends RouteComponentProps {}
 
 export function InstitutionalizedMedicalRecord(
-  props: InstitutionalizedMedicalRecordProps
+  _props: InstitutionalizedMedicalRecordProps
 ) {
   return (
     <Router>

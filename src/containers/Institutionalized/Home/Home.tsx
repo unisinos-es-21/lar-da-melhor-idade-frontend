@@ -9,8 +9,8 @@ import {
   Table,
 } from '@lar_melhor_idade/design-system';
 
-import { getList } from '../../../api/institutionalized';
-import { InstitutionalizedListResponse } from '../../../api/interface/institutionalized';
+import { getList } from 'api/institutionalized';
+import { InstitutionalizedListResponse } from 'api/interface/institutionalized';
 
 export interface InstitutionalizedProps extends RouteComponentProps {}
 
@@ -44,7 +44,7 @@ enum Gender {
   OTHER = 'Outro',
 }
 
-export function InstitutionalizedHome({ ...props }: InstitutionalizedProps) {
+export function InstitutionalizedHome(_props: InstitutionalizedProps) {
   const [listProps, setListProps] = useState<InstitutionalizedListResponse>({
     content: [],
     first: true,

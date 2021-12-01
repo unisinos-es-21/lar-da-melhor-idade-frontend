@@ -14,11 +14,11 @@ import {
   Text,
 } from '@lar_melhor_idade/design-system';
 
-import { getRegister } from '../../../api/institutionalized';
-import { registerMedicalRecord } from '../../../api/medical-record';
+import { getRegister } from 'api/institutionalized';
+import { registerMedicalRecord } from 'api/medical-record';
 
-import { MedicalRecordRequest } from '../../../api/interface/medical-record';
-import { InstitutionalizedResponse } from '../../../api/interface/institutionalized';
+import { MedicalRecordRequest } from 'api/interface/medical-record';
+import { InstitutionalizedResponse } from 'api/interface/institutionalized';
 
 export interface InstitutionalizedMedicalRecordProps
   extends RouteComponentProps {
