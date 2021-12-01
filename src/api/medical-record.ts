@@ -1,21 +1,11 @@
-import { client } from './client';
+import { client } from '@base/api/client';
 
 import {
   MedicalRecordRequest,
   InstitutionalizedListRequest,
   MedicalRecordResponse,
   MedicalRecordListResponse,
-} from './interface/medical-record';
-
-export function registerMedicalRecord(
-  medicalRecordRequest: MedicalRecordRequest
-) {
-  return client.post('medicalRecord', medicalRecordRequest);
-}
-
-export function deleteMedicalRecord(id: string) {
-  return client.delete(`medicalRecord/${id}`);
-}
+} from '@base/api/interface/medical-record';
 
 export function getMedicalRecord(id: string) {
   return client.get<MedicalRecordResponse>(`medicalRecord/${id}`);
@@ -37,4 +27,14 @@ export function getMedicalRecordList(
   const url = `medicalRecord?${params.toString()}`;
 
   return client.get<MedicalRecordListResponse>(url);
+}
+
+export function registerMedicalRecord(
+  medicalRecordRequest: MedicalRecordRequest
+) {
+  return client.post('medicalRecord', medicalRecordRequest);
+}
+
+export function deleteMedicalRecord(id: string) {
+  return client.delete(`medicalRecord/${id}`);
 }

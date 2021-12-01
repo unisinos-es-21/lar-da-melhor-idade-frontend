@@ -1,9 +1,9 @@
 import { AxiosResponse } from 'axios';
-import { client } from './client';
 
-import { AuthResponse, AuthRequest } from './interface/auth';
+import { client } from '@base/api/client';
+import { AuthResponse, AuthRequest } from '@base/api/interface/auth';
 
-export function login(authRequest: AuthRequest) {
+export function auth(authRequest: AuthRequest) {
   return client.post<AuthRequest, AxiosResponse<AuthResponse>>(
     'auth/authenticate',
     authRequest

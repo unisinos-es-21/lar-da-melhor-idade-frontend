@@ -1,11 +1,11 @@
-import { client } from './client';
+import { client } from '@base/api/client';
 
 import {
   InstitutionalizedRequest,
   InstitutionalizedResponse,
   InstitutionalizedListRequest,
   InstitutionalizedListResponse,
-} from './interface/institutionalized';
+} from '@base/api/interface/institutionalized';
 
 export function register(institutionalizedRequest: InstitutionalizedRequest) {
   return client.post<InstitutionalizedRequest>(

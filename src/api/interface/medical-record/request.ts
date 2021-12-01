@@ -1,4 +1,4 @@
-import { InstitutionalizedResponse } from './institutionalized';
+import { InstitutionalizedResponse } from '@base/api/interface/institutionalized';
 
 export interface MedicalRecordRequest {
   institutionalized?: InstitutionalizedResponse;
@@ -13,20 +13,8 @@ export interface MedicalRecordRequest {
   cid?: string;
 }
 
-export interface MedicalRecordResponse extends MedicalRecordRequest {
-  id: number;
-}
-
 export interface InstitutionalizedListRequest {
   institutionalizedId: string;
   medicalAppointmentDate?: string;
   page?: number;
-}
-
-export interface MedicalRecordListResponse {
-  content: MedicalRecordResponse[];
-  first: boolean;
-  last: boolean;
-  number: number;
-  totalPages: number;
 }

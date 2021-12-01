@@ -10,7 +10,7 @@ import {
   Size,
 } from '@lar_melhor_idade/design-system';
 
-import { login } from '../../api/auth';
+import { auth } from '@base/api/auth';
 
 export interface LoginProps extends RouteComponentProps {}
 
@@ -28,7 +28,7 @@ export function Login(props: LoginProps) {
       password: '',
     },
     onSubmit: async ({ username, password }) => {
-      await login({ username, password })
+      await auth({ username, password })
         .then(({ data }) => {
           localStorage.setItem('token', data.token);
           navigate('/home');
