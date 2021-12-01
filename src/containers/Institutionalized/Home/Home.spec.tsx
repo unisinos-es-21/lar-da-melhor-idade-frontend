@@ -6,9 +6,7 @@ describe('InstitutionalizedHome - Container para a página de institucionalizado
   test('Deve renderizar os elementos', async () => {
     render(<InstitutionalizedHome />);
 
-    const title = await screen.findByText(
-      'ILPI Melhor Idade > Institucionalizado'
-    );
+    const title = await screen.findByText(/ILPI Melhor Idade/i);
     const titleCardUser = await screen.findByText('Institucionalizados');
     const inputCardUser = await screen.findByText(/Cadastrar/i);
 
@@ -24,7 +22,7 @@ describe('InstitutionalizedHome - Container para a página de institucionalizado
     const tableRowCPF = await screen.findByText('00000000014');
     const tableRowPhone = await screen.findByText('545034540');
     const tableRowBirthDay = await screen.findByText('1971-09-22');
-    const tableRowGender = await screen.findByText('OTHER');
+    const tableRowGender = await screen.findByText('Outro');
 
     expect(title).toBeVisible();
     expect(titleCardUser).toBeVisible();

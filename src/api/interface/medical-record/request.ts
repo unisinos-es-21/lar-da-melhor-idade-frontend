@@ -1,4 +1,4 @@
-import { InstitutionalizedResponse } from '@base/api/interface/institutionalized';
+import { InstitutionalizedResponse } from 'api/interface/institutionalized';
 
 export interface MedicalRecordRequest {
   institutionalized?: InstitutionalizedResponse;

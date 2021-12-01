@@ -10,7 +10,7 @@ import {
   Size,
 } from '@lar_melhor_idade/design-system';
 
-import { auth } from '@base/api/auth';
+import { auth } from 'api/auth';
 
 export interface LoginProps extends RouteComponentProps {}
 

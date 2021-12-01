@@ -6,9 +6,7 @@ describe('InstitutionalizedRegister - Container para a página de cadastro insti
   test('Deve renderizar os elementos', async () => {
     render(<InstitutionalizedRegister />);
 
-    const title = await screen.findByText(
-      'ILPI Melhor Idade > Institucionalizado > Cadastrar'
-    );
+    const title = await screen.findByText(/ILPI Melhor Idade/i);
     const titleCardUser = await screen.findByText(
       'Cadastrar Institucionalizado'
     );

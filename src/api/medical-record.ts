@@ -1,11 +1,11 @@
-import { client } from '@base/api/client';
+import { client } from 'api/client';
 
 import {
   MedicalRecordRequest,
   InstitutionalizedListRequest,
   MedicalRecordResponse,
   MedicalRecordListResponse,
-} from '@base/api/interface/medical-record';
+} from 'api/interface/medical-record';
 
 export function getMedicalRecord(id: string) {
   return client.get<MedicalRecordResponse>(`medicalRecord/${id}`);

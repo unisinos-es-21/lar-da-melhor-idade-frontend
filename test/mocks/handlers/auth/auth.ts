@@ -1,9 +1,9 @@
 import { rest } from 'msw';
 
-import { AuthRequest, AuthResponse } from '../../../../src/api/interface/auth';
-import { ErrorResponse } from '../../../../src/api/interface/error';
+import { AuthRequest, AuthResponse } from 'api/interface/auth';
+import { ErrorResponse } from 'api/interface/error';
 
-const BASE_URL = 'https://unisinos-test-21.herokuapp.com';
+const BASE_URL = 'https://lar-da-melhor-idade-backend.herokuapp.com';
 
 export const authHandlers = [
   rest.post<AuthRequest, AuthResponse | ErrorResponse>(

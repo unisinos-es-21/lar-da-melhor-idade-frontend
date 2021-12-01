@@ -3,10 +3,10 @@ import { rest } from 'msw';
 import {
   InstitutionalizedListRequest,
   InstitutionalizedListResponse,
-} from '../../../../src/api/interface/institutionalized';
-import { ErrorResponse } from '../../../../src/api/interface/error';
+} from 'api/interface/institutionalized';
+import { ErrorResponse } from 'api/interface/error';
 
-const BASE_URL = 'https://unisinos-test-21.herokuapp.com';
+const BASE_URL = 'https://lar-da-melhor-idade-backend.herokuapp.com';
 
 export const institutionalizedHandlers = [
   rest.get<
@@ -17,6 +17,7 @@ export const institutionalizedHandlers = [
       ctx.json<InstitutionalizedListResponse>({
         content: [
           {
+            id: 1,
             name: 'João José da Silva Santos14',
             cpf: '00000000014',
             phone: '545034540',
