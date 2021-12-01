@@ -42,12 +42,12 @@ export function Login(props: LoginProps) {
   });
 
   return (
-    <section className="flex justify-center items-center w-full min-h-screen p-8 bg-blue-200 md:p-0">
+    <section className="flex justify-center items-center w-full min-h-screen p-8 bg-gray-50 md:p-0">
       <div className="container grid grid-rows-1 grid-cols-1 md:grid-cols-3 space-y-8">
         <Title
           type="h1"
           className="w-full text-center md:col-start-2 md:col-end-2"
-          color={Color.WHITE}
+          color={Color.BLACK}
           size={Size.LARGE}
         >
           ILPI Melhor Idade

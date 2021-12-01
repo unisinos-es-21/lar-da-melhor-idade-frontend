@@ -90,9 +90,9 @@ export function InstitutionalizedMedicalRecordRegister({
   );
 
   return (
-    <section className="flex flex-col justify-start items-center w-full min-h-screen bg-white space-y-8 md:p-0">
-      <Header className="px-4 md:px-0">
-        <Title type="h1">
+    <section className="flex flex-col justify-start items-center w-full min-h-screen bg-gray-50 space-y-8 md:p-0">
+      <Header color={Color.BLACK} className="px-4 md:px-0 ">
+        <Title type="h1" color={Color.WHITE}>
           <span
             className="cursor-pointer"
             onClick={async () => await navigate(`/home`)}

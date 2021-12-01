@@ -13,9 +13,11 @@ export interface HomeProps extends RouteComponentProps {}
 
 export function Home(_props: HomeProps) {
   return (
-    <section className="flex flex-col justify-start items-center w-full min-h-screen bg-white space-y-8 md:p-0">
-      <Header className="px-4 md:px-0">
-        <Title type="h1">ILPI Melhor Idade</Title>
+    <section className="flex flex-col justify-start items-center w-full min-h-screen bg-gray-50 space-y-8 md:p-0">
+      <Header color={Color.BLACK} className="px-4 md:px-0 ">
+        <Title type="h1" color={Color.WHITE}>
+          ILPI Melhor Idade
+        </Title>
       </Header>
       <div className="container grid grid-cols-1 px-4 space-y-8 md:grid-cols-4 md:px-0">
         <Card>
